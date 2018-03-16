@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, OnChanges} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -6,29 +6,34 @@ import {Router} from '@angular/router';
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, OnChanges {
     @Input() data: any[];
 
     constructor(private router: Router) {
     }
 
     ngOnInit() {
+    }
+
+    ngOnChanges() {
+        const url = this.router.url;
         let target: Element;
-        setTimeout(() => {
-            const url = this.router.url;
-            const targetList: any = document.querySelectorAll(".ui-menu .ui-menu-link");
-            [].every.call(targetList, (item: any) => {
-                if (item.hash === `#${url}`) {
-                    target = item;
-                    return false;
+        if (url !== '/') {
+            setTimeout(() => {
+                const targetList: any = document.querySelectorAll(".ui-menu .ui-menu-link");
+                [].every.call(targetList, (item: any) => {
+                    if (item.hash === `#${url}`) {
+                        target = item;
+                        return false;
+                    }
+                    return true;
+                });
+                if (target) {
+                    target = target.closest(".ui-menu-item")
+                    this._defaultToggle(target)
                 }
-                return true;
-            });
-            if (target) {
-                target = target.closest(".ui-menu-item")
-                this._defaultToggle(target)
-            }
-        }, 0)
+            }, 0)
+        }
     }
 
     _defaultToggle = (target: any) => {

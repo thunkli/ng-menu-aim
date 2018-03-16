@@ -7,6 +7,14 @@ An menu component for Angular.
 
 In order to use the ng-menu-aim you have to include/import it into your application:
 
+### Installation
+
+Install the module into your application and save it as a dev dependency in your `package.json` file
+
+```
+npm install ng-menu-aim --save-dev
+```
+
 ```js
 import {MenuComponent} from 'ng-menu-aim';
 ```
