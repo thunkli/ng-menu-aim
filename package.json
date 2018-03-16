@@ -1,0 +1,35 @@
+{
+  "name": "ng-menu-aim",
+  "version": "0.0.1",
+  "description": "An menu component for Angular.",
+  "main": "src/menu.component.ts",
+  "types": "index.d.ts",
+  "author": "tvicpe <thunkli@qq.com> (https://github.com/thunkli)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thunkli/ng-menu-aim.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "keywords": [
+    "menu"
+  ],
+  "dependencies": {
+    "@angular/core": ">=5.0.0",
+    "@angular/platform-browser": ">=5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "~2.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/thunkli/ng-menu-aim/issues"
+  },
+  "homepage": "https://github.com/thunkli/ng-menu-aim#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}

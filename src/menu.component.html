@@ -1,0 +1,19 @@
+<ul class="ui-menu" (click)="toggle($event)">
+  <li class="ui-menu-item" *ngFor="let item of data; let i=index">
+    <div *ngIf="item.child.length>0" class="ui-menu-title ui-menu-arrow">{{item.name}}</div>
+    <ul *ngIf="item.child.length>0" class="ui-menu-child">
+      <li class="ui-menu-item" *ngFor="let parent of item.child">
+        <div *ngIf="parent.child.length > 0" class="ui-menu-title ui-menu-arrow">{{parent.name}}</div>
+        <ul *ngIf="parent.child.length > 0" class="ui-menu-child">
+          <li class="ui-menu-item" *ngFor="let grandson of parent.child"><a
+            routerLink="{{grandson.url}}" class="ui-menu-link">{{grandson.name}}</a></li>
+        </ul>
+        <div *ngIf="parent.child.length == 0" class="ui-menu-title"><a routerLink="{{parent.url}}" class="ui-menu-link">{{parent.name}}</a>
+        </div>
+      </li>
+    </ul>
+    <div *ngIf="item.child.length==0" class="ui-menu-title">
+      <a *ngIf="item.child.length==0" routerLink="{{item.url}}" class="ui-menu-link">{{item.name}}</a>
+    </div>
+  </li>
+</ul>
