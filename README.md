@@ -12,7 +12,7 @@ In order to use the ng-menu-aim you have to include/import it into your applicat
 Install the module into your application and save it as a dev dependency in your `package.json` file
 
 ```
-npm install ng-menu-aim --save-dev
+npm i ng-menu-aim --save
 ```
 
 ```js
