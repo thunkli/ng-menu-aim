@@ -40,27 +40,13 @@ Use it in your template:
 ```json
 [{
     "name": "用户管理",
-    "resourceId": 1986,
-    "sort": 1,
     "url": "",
-    "icon": "",
     "child": [{
         "name": "机构用户管理",
-        "resourceId": 1983,
-        "sort": 1,
         "url": "/user/organization",
-        "icon": "",
-        "child": [],
-        "right": true
     }, {
         "name": "实名认证记录查询",
-        "resourceId": 2022,
-        "sort": 2,
-        "url": "/user/realName",
-        "icon": "",
-        "child": [],
-        "right": true
-    }],
-    "right": true
+        "url": "/user/realName"
+    }]
 }]
 ```
