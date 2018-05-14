@@ -1,9 +1,8 @@
 {
   "name": "ng-menu-aim",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An menu component for Angular.",
   "main": "src/menu.component.ts",
-  "types": "index.d.ts",
   "author": "tvicpe <thunkli@qq.com> (https://github.com/thunkli)",
   "repository": {
     "type": "git",
@@ -17,18 +16,31 @@
   "keywords": [
     "menu"
   ],
-  "dependencies": {
+  "ngPackage": {
+    "lib": {
+      "languageLevel": ["dom", "es2017"],
+      "entryFile": "./src/public_api.ts"
+    }
+  },
+  "peerDependencies": {
     "@angular/core": ">=5.0.0",
-    "@angular/platform-browser": ">=5.0.0"
+    "@angular/common": ">=5.0.0",
+    "@angular/router": ">=5.0.0"
+  },
+  "dependencies": {
   },
   "devDependencies": {
-    "typescript": "~2.2.0"
+    "@angular/compiler": "^6.0.1",
+    "@angular/compiler-cli": "^6.0.1",
+    "ng-packagr": "^2.4.4",
+    "typescript": "^2.7.2"
   },
   "bugs": {
     "url": "https://github.com/thunkli/ng-menu-aim/issues"
   },
   "homepage": "https://github.com/thunkli/ng-menu-aim#readme",
   "scripts": {
+    "build": "ng-packagr -p package.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "ISC"
